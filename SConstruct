@@ -60,7 +60,7 @@ def CheckVersion(context, cmd, exp, required, extra_error=''):
         return False
     match = exp.search(vsout)
     if not match:
-        context.Result('%s returned unexpected output' % (cmd, extra_error) )
+        context.Result('%s returned unexpected output: %s' % (cmd, extra_error) )
         return False
     version = match.group(1)
     exploded_version = version.split('.')
